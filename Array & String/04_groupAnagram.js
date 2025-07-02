@@ -16,10 +16,12 @@ function same(arr1, arr2) {
   // This will count how many times each number appears in arr1
   let freq1 = {}; // Empty object to store counts
 
-  for (let i = 0; i < arr1.length; i++) { // Go through each element
+  for (let i = 0; i < arr1.length; i++) {
+    // Go through each element
     let number = arr1[i]; // Get the number at the current position
 
-    if (freq1[number] === undefined) { // If this number is not in freq1 yet
+    if (freq1[number] === undefined) {
+      // If this number is not in freq1 yet
       freq1[number] = 1; // Start the count at 1
     } else {
       freq1[number] = freq1[number] + 1; // If already exists, increase the count
@@ -31,10 +33,12 @@ function same(arr1, arr2) {
   // This will count how many times each number appears in arr2
   let freq2 = {}; // Empty object to store counts
 
-  for (let i = 0; i < arr2.length; i++) { // Go through each element
+  for (let i = 0; i < arr2.length; i++) {
+    // Go through each element
     let number = arr2[i]; // Get the number at the current position
 
-    if (freq2[number] === undefined) { // If this number is not in freq2 yet
+    if (freq2[number] === undefined) {
+      // If this number is not in freq2 yet
       freq2[number] = 1; // Start the count at 1
     } else {
       freq2[number] = freq2[number] + 1; // If already exists, increase the count
