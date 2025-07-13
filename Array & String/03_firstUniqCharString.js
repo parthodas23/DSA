@@ -12,13 +12,13 @@ var firstUniqChar = function (s) {
   // collect obj
   console.log(count);
 
-  for (let char in count) {
-    if (count[char] === 1) {
-      console.log(s.indexOf(`${char}`));
-      //   console.log(char);
-      return;
+  for (let i = 0; i < s.length; i++) {
+    if (count[s[i]] === 1) {
+      // check in count all char
+      return i;
     }
   }
+  return -1;
 };
 
 firstUniqChar("loveleetcode");

@@ -6,7 +6,7 @@ var removeDuplicates = function (nums) {
       i++; // this is add and also count how many unique num add like index wise,
       nums[i] = nums[j];
     }
-  }
+  } 
   console.log(nums.slice(0, i + 1));
   return i + 1; // in here i is for index so it's counts as a index that's totlat unique nums is i+1
 };
