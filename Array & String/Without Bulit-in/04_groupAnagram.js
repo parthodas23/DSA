@@ -4,41 +4,38 @@ var groupAnagrams = function (strs) {
     // it's run strs length of times
 
     // in here just for one word only one oparetion happen once at a time
-
     let word = strs[i];
-
-    // let count=[]
     let count = Array(26).fill(0); // just create one arr once at a time
+    // let count=[]
     // for(let c=0;c<26;c++){
     //     count[c]=0
     // }
-
     for (let k = 0; k < word.length; k++) {
       let charCode = word.charCodeAt(k);
       let index = charCode - 97;
       count[index] += 1;
     }
-
     let key = "";
     for (let k = 0; k < 26; k++) {
       // run for only one word once at a time
       key += "#" + count[k];
     }
-
     if (!groups[key]) {
       groups[key] = []; // 1st create []
     } // after running if block it's became true, now if we run else block it will not run because if was true so skip the 1st word
     groups[key].push(word); // now in here key wise push word in that []
   }
   // we also have to create result outside of the loop because it's collect the groups key and values
-  let result = [];
-  let index = 0;
-  for (let key in groups) {
-    result[index] = groups[key];
-    index++;
-  }
 
-  return result;
+  // let result = [];
+  // let index = 0;
+  // for (let key in groups) {
+  //   result[index] = groups[key];
+  //   index++;
+  // }
+  // return result;
+
+  return Object.values(groups);
 };
 
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
