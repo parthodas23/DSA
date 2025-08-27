@@ -9,6 +9,7 @@ var generate = function (numRows) {
     newRow.push(lastRow[i - 1] + lastRow[i]);
   }
   newRow.push(1);
+  
   prevTriangle.push(newRow);
 
   return prevTriangle;
