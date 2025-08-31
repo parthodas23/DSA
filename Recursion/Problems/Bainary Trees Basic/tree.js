@@ -29,8 +29,8 @@ const depth = (node) => {
   if (!node) return 0;
   return 1 + Math.max(depth(node.left), depth(node.right));
 };
-root.left.left = new TreeNode(4);
 
+root.left.left = new TreeNode(4);
 console.log("Inoerder");
 inorder(root);
 console.log("preoerder");

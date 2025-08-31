@@ -11,7 +11,7 @@ const isPlanedrome = (s) => {
         (leftChar >= 48 && leftChar <= 57)
       )
     ) {
-      return helper(left + 1, right);  // skip the char if it's not alphanumeric
+      return helper(left + 1, right);  // skip the char if it's alphanumeric
     }
     let rightChar = value[right].charCodeAt();
     if (

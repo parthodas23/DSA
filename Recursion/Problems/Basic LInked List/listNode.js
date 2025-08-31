@@ -25,7 +25,7 @@ while (current !== null) {
 
 // Pointer Manupulation
 let newNode = new ListNode(4);
-newNode.next = node1.next; // 1.next = null
+newNode.next = node1.next; // 4.next = null
 node1.next = newNode; // 1 --> 4
 
 console.log("---------------");

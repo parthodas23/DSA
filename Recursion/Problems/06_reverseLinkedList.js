@@ -1,12 +1,11 @@
 const reverse=(head)=>{
     let prev=null
-    let curr=prev
+    let curr=head
 
     while(curr !==null){
-        let newNode=curr.next
         curr.next=prev
         prev=curr
-        curr=newNode
+        curr=curr.next
     }
     return prev
 }
