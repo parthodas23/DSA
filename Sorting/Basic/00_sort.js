@@ -1,4 +1,4 @@
-const selection = (arr) => {
+const sort = (arr) => {
   const n = arr.length;
 
   for (let i = 0; i < n - 1; i++) {
@@ -13,4 +13,4 @@ const selection = (arr) => {
   return arr;
 };
 
-console.log(selection([5, 3, 8, 4, 2]));
+console.log(sort([5, 3, 8, 4, 2]));

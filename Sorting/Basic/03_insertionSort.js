@@ -5,7 +5,7 @@ const insert = (arr) => {
     let j = i - 1;
     while (j >= 0 && arr[j] > key) {
       arr[j + 1] = arr[j];
-      j--;
+      j--; // in here j gets smaller
     }
     arr[j + 1] = key;
   }
