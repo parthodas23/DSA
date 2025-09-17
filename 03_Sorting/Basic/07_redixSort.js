@@ -7,6 +7,7 @@ let countFrequency = (arr, exp) => {
     count[digit]++;
   }
 
+  // add prefix sum in count for finding the index
   for (let i = 1; i < count.length; i++) {
     count[i] += count[i - 1];
   }
@@ -14,7 +15,7 @@ let countFrequency = (arr, exp) => {
   for (let i = arr.length; i >= 0; i--) {
     let digit = Math.floor(arr[i] / exp) % 10;
     output[count[digit] - 1] = arr[i];
-    count[digit]--; // it's for not add all same value in one index
+    count[digit]--; // it's for not add all the same value in one index
   }
 
   for (let i = 0; i < arr.length; i++) {
