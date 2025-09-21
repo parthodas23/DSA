@@ -117,6 +117,24 @@ class DublyLinkedList {
 
     this.length++;
   }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return null;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    const found = this.get(index);
+    if (found) {
+      let nxt = found.next;
+      let past = found.prev;
+      past.next = nxt;
+      nxt.prev = past;
+
+      found.next = null;
+      found.prev = null;
+    }
+    this.length--;
+  }
 }
 
 const list = new DublyLinkedList();
@@ -129,6 +147,7 @@ list.push(30);
 // console.log(list.unshift(5));
 // console.log(list.get(2));
 // console.log(list.set(0, 5));
-list.insert(1, 15);
+// list.insert(1, 15);
+list.remove(1);
 
 console.log(list);
