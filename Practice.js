@@ -11,28 +11,30 @@ class SinglyLinkedList {
     this.tail = null;
     this.length = 0;
   }
-  push(value) {
+  push(value) { // o(1)
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
     } else {
-      this.tail.next = newNode;
+      this.tail.next = newNode;  // 10 --> tail/head, now 20 --> insially tai=head tail.next=next value , 10.next =20, this.tail=20
       this.tail = newNode;
     }
+
     this.length++;
     return this;
   }
 
-  pop() {
+  pop() {  //
     if (!this.head) return undefined;
-    let current = this.head;
+    let current = this.head; // 
     let prev;
     while (current.next) {
       prev = current;
-      current = current.next;
+      current = current.next; // move tooward
     }
-    this.tail = prev;
+
+    this.tail = prev; //
     this.tail.next = null;
     this.length--;
     if (this.length === 0) {
@@ -42,10 +44,10 @@ class SinglyLinkedList {
     return current;
   }
 
-  shift() {
+  shift() { // 
     if (!this.head) return undefined;
-    let temp = this.head;
-    this.head = this.head.next;
+    let temp = this.head; //
+    this.head = this.head.next;  //
     if (this.length === 0) {
       this.head = null;
       this.tail = null;
