@@ -7,6 +7,6 @@ console.log(sort); // sort evey letter in an array
 const join = sort.join("");
 console.log(join); // convert the array in a string
 
-const reverse = split.reverse();  
+const reverse = split.reverse();
 const join1 = reverse.join("");
-console.log(join1);
+console.log(reverse);

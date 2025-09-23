@@ -7,7 +7,7 @@ var isPalindrome = function(head) {
     }
 
     let prev=null, curr=slow
-    while(curr){
+    while(curr){  // reverse the second half
         let temp=curr.next
         curr.next=prev
         prev=curr
