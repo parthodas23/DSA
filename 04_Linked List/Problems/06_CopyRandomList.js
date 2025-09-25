@@ -19,7 +19,7 @@ const copy = (head) => {
   curr = head;
   while (curr) {
     if (curr.random) {
-      copyCurr.random = nodeMap.get(curr.random);
+      copyCurr.random = nodeMap.get(curr.random); // this random is a corrospoinding copied random value
     }
 
     copyCurr = copyCurr.next;
