@@ -6,12 +6,13 @@ class Node {
 }
 
 class Stack {
+  // here same value would be added and for remove same value would be remove first
   constructor() {
     this.first = null;
     this.last = null;
     this.size = 0;
   }
-  // in stack we use push and pop at the top because we don't have to trverse the hole list and it gives o(1) constant time efficiant.
+  // in stack we use push and pop for at the top because we don't have to trverse the hole list and it gives o(1) constant time efficiant.
   push(value) {
     let newNode = new Node(value);
     if (!this.first) {
