@@ -5,8 +5,9 @@ class Node {
   }
 }
 
+// here we used head as a top so that we can add or remove value without treveaseing the whole linked list
 class Stack {
-  // here same value would be added and for remove same value would be remove first
+  // here same value would be added and same value would be removed first
   constructor() {
     this.first = null;
     this.last = null;
@@ -43,8 +44,8 @@ stack.push(23);
 stack.push(100);
 stack.push(200);
 
-stack.pop();
-stack.pop();
+// stack.pop();
+// stack.pop();
 // stack.pop();
 
 console.log(stack);

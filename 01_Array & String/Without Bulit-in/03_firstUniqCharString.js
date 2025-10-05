@@ -21,4 +21,4 @@ var firstUniqChar = function (s) {
   return -1;
 };
 
-firstUniqChar("loveleetcode");
+console.log(firstUniqChar("loveleetcode"));

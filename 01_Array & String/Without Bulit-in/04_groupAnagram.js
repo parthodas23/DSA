@@ -6,16 +6,13 @@ var groupAnagrams = function (strs) {
     // in here just for one word only one oparetion happen once at a time
     let word = strs[i];
     let count = Array(26).fill(0); // just create one arr once at a time
-    // let count=[]
-    // for(let c=0;c<26;c++){
-    //     count[c]=0
-    // }
+
     for (let k = 0; k < word.length; k++) {
       let charCode = word.charCodeAt(k);
       let index = charCode - 97;
-      count[index] += 1;
+      count[index] += 1; // each time one value of 26 length of arr
     }
-    let key = "";
+    let key = ""; // create it a string
     for (let k = 0; k < 26; k++) {
       // run for only one word once at a time
       key += "#" + count[k];

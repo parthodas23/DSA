@@ -5,7 +5,7 @@ function findMaxNumArr(arr) {
     // all num
     let num = arr[i];
     if (num > max) {
-      max = num; // if we return early this will not check the full lopp
+      max = num; // if we return early this will not check the full loop
     }
   }
   return max; // in here check the all loops then return
