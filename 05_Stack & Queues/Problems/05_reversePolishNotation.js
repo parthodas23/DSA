@@ -12,7 +12,7 @@ var evalRPN = function(tokens) {
             if(token==="+") result=a+b
             else if(token==="-") result=a-b
             else if(token==="*") result=a*b
-            else if(token==="/") result=parseInt(a/b)
+            else if(token==="/") result=parseInt(a/b) // we don't need any float number in the answer
 
             stack.push(result)
         }else{
