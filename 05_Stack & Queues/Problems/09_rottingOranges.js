@@ -27,7 +27,7 @@ var rottingOranges = function (grid) {
     [0, -1],
   ];
   while (queue.length) {
-    let size = queue.length; // if 1 orange get rotted then inside queue would be 1 arr but if size 2 then the queue size would be 2 as well
+    let size = queue.length; // if 1 rotted orange then inside queue would be 1 arr but if size 2 then the queue size would be 2 as well
     let anyRottedOrrange = false;
 
     for (let i = 0; i < size; i++) {

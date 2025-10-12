@@ -18,3 +18,4 @@ var asteroidCollision = function (asteroids) {
   }
   return stack;
 };
+console.log(asteroidCollision([5, 4, -5]));
