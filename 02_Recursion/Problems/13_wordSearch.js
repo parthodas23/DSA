@@ -21,10 +21,10 @@ var exist = function (board, word) {
     board[r][c] = "#";
 
     let found =
-      dfs(r + 1, c, index + 1) || // down
-      dfs(r - 1, c, index + 1) || // up
-      dfs(r, c + 1, index + 1) || // left
-      dfs(r, c - 1, index + 1); // right
+      dfs(r + 1, c, index + 1) || // up
+      dfs(r - 1, c, index + 1) || // down
+      dfs(r, c + 1, index + 1) || // right
+      dfs(r, c - 1, index + 1); // left
 
     board[r][c] = temp; // resore the char
 
@@ -94,10 +94,10 @@ var exist = function (board, word) {
 //   return false;
 // };
 
-// let board = [
-//   ["A", "B", "C", "E"],
-//   ["S", "F", "C", "S"],
-//   ["A", "D", "E", "E"],
-// ];
+let board = [
+  ["A", "B", "C", "E"],
+  ["S", "F", "C", "S"],
+  ["A", "D", "E", "E"],
+];
 
-// console.log("Result:", exist(board, "SEE"));
+console.log(exist(board, "SEE"));

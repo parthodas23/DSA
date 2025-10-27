@@ -1,7 +1,7 @@
 var removeDuplicates = function (nums) {
-  let i = 0; // this it slow pointer like just adding unique nums index wise
+  let i = 0; // this is a slow pointer like just adding unique nums index wise
   for (let j = 1; j < nums.length; j++) {
-    if (nums[j] != nums[i]) {
+    if (nums[j] !== nums[i]) {
       // 1st change index then add
       i++; // this is add and also count how many unique num add like index wise,
       nums[i] = nums[j];

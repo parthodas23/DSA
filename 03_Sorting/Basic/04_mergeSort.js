@@ -12,7 +12,7 @@ const mergeSort = (arr) => {
 };
 
 const merge = (left, right) => {
-  let result = [];
+  let result = []; 
   let i = 0,
     j = 0;
 

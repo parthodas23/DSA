@@ -1,18 +1,16 @@
-function sellAndBuyBook(prices) {
+var maxProfit = function (prices) {
   let maxProfit = 0;
-  let buy = 0;
-  for (let i = 1; i < prices.length; i++) {
-    let sell = prices[i];
-    let profit = sell - prices[buy];
-
-    if (profit > 0) {
-      maxProfit = Math.max(maxProfit, profit);
+  let left = 0;
+  let right = 1;
+  while (right < prices.length) {
+    if (prices[right] < prices[left]) {
+      left = right;
     } else {
-      buy++;
+      let profit = prices[right] - prices[left];
+      maxProfit = Math.max(maxProfit, profit);
     }
+    right++;
   }
 
   return maxProfit;
-}
-
-console.log(sellAndBuyBook([7, 1, 5, 3, 6, 4]));
+};

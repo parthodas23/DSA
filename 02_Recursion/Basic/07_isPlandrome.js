@@ -11,7 +11,7 @@ const isPlanedrome = (s) => {
         (leftChar >= 48 && leftChar <= 57)
       )
     ) {
-      return helper(left + 1, right);  // skip the char if it's alphanumeric
+      return helper(left + 1, right); // skip the char if it's alphanumeric
     }
     let rightChar = value[right].charCodeAt();
     if (
@@ -25,7 +25,7 @@ const isPlanedrome = (s) => {
 
     if (value[left] !== value[right]) return false;
 
-    return helper(left + 1, right - 1);  // it's use for normal increment, decrement
+    return helper(left + 1, right - 1); // it's use for normal increment, decrement
   }
   return helper(0, value.length - 1);
 };

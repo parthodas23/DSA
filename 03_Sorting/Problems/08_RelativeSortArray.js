@@ -9,6 +9,7 @@ const relativeSort = (arr1, arr2) => {
       count[num] += 1;
     }
   }
+  // this result part would be automatically sort same as arr2
   for (let num of arr2) {
     if (count[num]) {
       for (let i = 0; i < count[num]; i++) {

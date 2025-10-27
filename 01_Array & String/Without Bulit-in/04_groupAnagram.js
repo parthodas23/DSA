@@ -12,7 +12,7 @@ var groupAnagrams = function (strs) {
       let index = charCode - 97;
       count[index] += 1; // each time one value of 26 length of arr
     }
-    let key = ""; // create it a string
+    let key = ""; // create it as a form of a string
     for (let k = 0; k < 26; k++) {
       // run for only one word once at a time
       key += "#" + count[k];

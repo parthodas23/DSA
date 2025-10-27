@@ -4,7 +4,7 @@ var threeSum = function (nums) {
 
   for (let i = 0; i < nums.length - 2; i++) {
     // here nums.length-2 because we gonna use two pointer, so pick i and then use left and right
-    if (i > 0 && nums[i] === nums[i - 1]) {
+    if (i > 0 && nums[i] === nums[i - 1]) {  // this avoids adding dup triplets
       continue;
     }
 

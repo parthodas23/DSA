@@ -1,14 +1,26 @@
-const maxSum = (arr, k) => {
-  let firstSum = 0;
-  for (let i = 0; i < k; i++) {
-    firstSum += arr[i];
+const mergeInterval = (intervals) => {
+  intervals.sort((a, b) => a[0] - b[0]);
+  let result = [intervals[0]];
+  let i = 1;
+  while (i < intervals.length) {
+    let interval = intervals[i];
+    let last = result[result.length - 1];
+
+    if (last[1] >= interval[0]) {
+      last[0] = Math.min(last[0], interval[0]);
+      last[1] = Math.max(last[1], interval[1]);
+    } else {
+      result.push(interval);
+    }
+    i++;
   }
 
-  let max = firstSum;
-  for (let i = 0; i < arr.length - k; i++) {
-    firstSum = firstSum - arr[i] + arr[i + k];
-    max = Math.max(max, firstSum);
-  }
-
-  return max;
+  return result;
 };
+
+console.log(
+  mergeInterval([
+    [4, 7],
+    [1, 4],
+  ])
+);

@@ -10,14 +10,14 @@ const sortColors = (nums) => {
       nums[mid] = temp;
 
       low++;
-      mid++;
+      mid++; // in here mid is pointer so mid check for every number
     } else if (nums[mid] === 1) {
       mid++;
     } else {
       let temp = nums[high];
       nums[high] = nums[mid];
       nums[mid] = temp;
-      high--;
+      high--; // why not mid as well because high already swap that's why the 1st value chnge in swap time
     }
   }
 

@@ -6,11 +6,13 @@ const quickSlection = (nums, k) => {
     for (let j = i; j < right; j++) {
       // j is for itration
       if (nums[j] <= pivot) {
-        [nums[i], nums[j]] = [nums[j], nums[i]]; // swapping with itself for smaller code
+        [nums[i], nums[j]] = [nums[j], nums[i]]; // swapping with itself for smaller number
         i++;
       }
     }
+
     [nums[i], nums[right]] = [nums[right], nums[i]];
+    
     return i; // this is pivot index
   };
 
