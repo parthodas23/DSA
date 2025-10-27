@@ -19,7 +19,7 @@ class SinglyLinkedList {
       this.head = newNode;
       this.tail = newNode;
     } else {
-      this.tail.next = newNode; // this tail is for to pointing the prev val to last val
+      this.tail.next = newNode; // this tail is for to pointing the prev (like insially head) val to last val
       this.tail = newNode; // then set tail= 20 the last one
     }
 
@@ -156,7 +156,7 @@ list.push(30);
 // console.log(list.set(1, 15));
 // console.log(list.insert(1, 15));
 // console.log(list.insert(4, 25));
-console.log(list.remove(1));
+// console.log(list.remove(1));
 // console.log(list.reverse());
 
 console.log(list);
