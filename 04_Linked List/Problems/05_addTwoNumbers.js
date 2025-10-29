@@ -14,10 +14,9 @@ const addTwoNumbers = (l1, l2) => {
       l2 = l2.next;
     }
 
-    carry = Math.floor(sum / 10); // carry -> 7+8=15, carry = 1
-    curr.next = new ListNode(sum % 10); // digit to add --> 15%10 = 5
+    carry = Math.floor(sum / 10); // carry -> 6+4=10, carry = 1
+    curr.next = new ListNode(sum % 10); // digit to add --> 10%10 = 0
     curr = curr.next;
   }
-
   return dummy.next;
 };
