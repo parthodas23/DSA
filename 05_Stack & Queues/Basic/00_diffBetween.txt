@@ -1,0 +1,6 @@
+
+Queue (FIFO) → First In, First Out
+→ e.g. push(1), push(2), pop() → returns 1 (the first inserted item)
+
+Stack (LIFO) → Last In, First Out
+→ e.g. push(1), push(2), pop() → returns 2 (the last inserted item)

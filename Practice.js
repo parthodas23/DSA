@@ -1,9 +1,32 @@
-const queue = [];
+const courseSchedule = (numCourses, prerequisites) => {
+  let queue = [];
+  let graph = {};
+  let inDegree = new Array(numCourses).fill(0);
 
-queue.unshift(1);
-queue.unshift(2);
-queue.unshift(3); // first in
+  for (let [a, b] of prerequisites) {
+    if (!graph[b]) graph[b] = [];
+    graph[b].push(a);
+    inDegree[a]++; // why do we need to increase a ?
+  }
 
-queue.pop(); // first out
+  for (let i = 0; i < numCourses; i++) {
+    if (inDegree[i] === 0) {
+      queue.push(i); // in here what actually queue does?
+    }
+  }
+  let count = 0;
+  while (queue.length) {
+    let current = queue.shift();
+    count++;
 
-console.log(queue);
+    for (let neighbor of graph[current]) {
+      // in what is neighbor actually?
+      inDegree[neighbor]--; // why we are decresing the inDegree[neighbor] value before?
+      if (inDegree[neighbor] === 0) {
+        queue.push(neighbor); // in why are we adding neighbor in queue?
+      }
+    }
+  }
+
+  return count === numCourses;
+};

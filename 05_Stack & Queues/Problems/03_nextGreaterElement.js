@@ -10,6 +10,8 @@ var nextGreaterElement = function (nums1, nums2) {
     }
     stack.push(num);
   }
+  console.log(nextGreater);
 
   return nums1.map((num) => nextGreater.get(num) ?? -1);
 };
+console.log(nextGreaterElement([4, 1, 2], [1, 3, 4, 2]));

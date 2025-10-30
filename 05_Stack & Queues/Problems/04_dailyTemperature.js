@@ -14,5 +14,3 @@ const dailyTemperature = (temp) => {
   }
   return result;
 };
-
-console.log(["a", "b"].join("/"));
