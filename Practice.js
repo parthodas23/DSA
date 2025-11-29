@@ -1,35 +1,19 @@
-const countNodes = (root) => {
-  if (!root) return 0;
+const nodes = ["A", "B", "C", "D"];
 
-  const leftHeight = (node) => {
-    if (!node) return 0;
+let size = nodes.length;
+let matrix = Array.from({ length: size }, () => Array(size).fill(0));
 
-    let h = 0;
-    while (node) {
-      h++;
-      node = node.next;
-    }
-    return h;
-  };
+const addEdgeAndNode = (matrix, nodes, a, b) => {
+  let i = nodes.indexOf(a);
+  let j = nodes.indexOf(b);
 
-  const rightHeight = (node) => {
-    if (!node) return 0;
-    let h = 0;
-
-    while (node) {
-      h++;
-      node = node.next;
-    }
-
-    return h;
-  };
-
-  let lh = leftHeight(root);
-  let rh = rightHeight(root);
-
-  if (lh === rh) {
-    return Math.pow(2, lh) - 1;
-  }
-
-  return 1 + countNodes(root.left) + countNodes(root.right);
+  matrix[i][j] = 1;
+  matrix[j][i] = 1;
 };
+
+addEdgeAndNode(matrix, nodes, "A", "B");
+addEdgeAndNode(matrix, nodes, "A", "C");
+addEdgeAndNode(matrix, nodes, "B", "D");
+addEdgeAndNode(matrix, nodes, "C", "D");
+
+console.log(matrix);
