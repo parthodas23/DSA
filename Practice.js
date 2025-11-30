@@ -1,19 +1,32 @@
-const nodes = ["A", "B", "C", "D"];
+const province = (isConnected) => {
+  let provinces = 0;
+  let n = isConnected.length;
+  let visited = new Array(n).fill(false);
 
-let size = nodes.length;
-let matrix = Array.from({ length: size }, () => Array(size).fill(0));
+  const dfs = (city) => {
+    visited[city] = true;
 
-const addEdgeAndNode = (matrix, nodes, a, b) => {
-  let i = nodes.indexOf(a);
-  let j = nodes.indexOf(b);
+    for (let neighbor = 0; neighbor < n; neighbor++) {
+      if (isConnected[city][neighbor] === 1 && !visited[neighbor]) {
+        dfs(neighbor);
+      }
+    }
+  };
 
-  matrix[i][j] = 1;
-  matrix[j][i] = 1;
+  for (let i = 0; i < n; i++) {
+    if (!visited[i]) {
+      provinces++;
+      dfs(i);
+    }
+  }
+
+  return provinces;
 };
 
-addEdgeAndNode(matrix, nodes, "A", "B");
-addEdgeAndNode(matrix, nodes, "A", "C");
-addEdgeAndNode(matrix, nodes, "B", "D");
-addEdgeAndNode(matrix, nodes, "C", "D");
-
-console.log(matrix);
+console.log(
+  province([
+    [1, 1, 0],
+    [1, 1, 0],
+    [0, 0, 1],
+  ])
+);

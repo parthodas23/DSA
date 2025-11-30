@@ -14,9 +14,9 @@ const bfs = (graph, start) => {
   while (queue.length) {
     let node = queue.shift();
 
-    for (let neibhor of graph[node]) {
-      visited.add(neibhor);
-      queue.push(neibhor);
+    for (let neighbor of graph[node]) {
+      visited.add(neighbor);
+      queue.push(neighbor);
     }
   }
 
