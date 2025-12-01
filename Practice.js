@@ -1,32 +1,42 @@
-const province = (isConnected) => {
-  let provinces = 0;
-  let n = isConnected.length;
-  let visited = new Array(n).fill(false);
+const isReginon = (board) => {
+  let rows = board.length;
+  let cols = board[0].length;
 
-  const dfs = (city) => {
-    visited[city] = true;
+  const dfs = (r, c) => {
+    if (r < 0 || c < 0 || r >= rows || c >= cols || board[r][c] !== "O") return;
+    board[r][c] = "S";
 
-    for (let neighbor = 0; neighbor < n; neighbor++) {
-      if (isConnected[city][neighbor] === 1 && !visited[neighbor]) {
-        dfs(neighbor);
-      }
-    }
+    dfs(r + 1, c);
+    dfs(r - 1, c);
+    dfs(r, c + 1);
+    dfs(r, c - 1);
   };
 
-  for (let i = 0; i < n; i++) {
-    if (!visited[i]) {
-      provinces++;
-      dfs(i);
+  for (let c = 0; c < cols; c++) {
+    dfs(0, c);
+    dfs(rows - 1, c);
+  }
+
+  for (let r = 0; r < rows; r++) {
+    dfs(r, 0);
+    dfs(r, cols - 1);
+  }
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (board[r][c] === "O") board[r][c] = "X";
+      if (board[r][c] === "S") board[r][c] = "O";
     }
   }
 
-  return provinces;
+  return board;
 };
 
 console.log(
-  province([
-    [1, 1, 0],
-    [1, 1, 0],
-    [0, 0, 1],
+  isReginon([
+    ["X", "X", "X", "X"],
+    ["X", "O", "O", "X"],
+    ["X", "X", "O", "X"],
+    ["X", "O", "X", "X"],
   ])
 );
