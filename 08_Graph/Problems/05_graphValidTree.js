@@ -1,25 +1,26 @@
 const isValidGraphTree = (n, edges) => {
   if (edges.length !== n - 1) return false;
 
-  const graph = Array.from({ length: n }, () => []);
+  let graph = Array.from({ length: n }, () => []);
   for (let [a, b] of edges) {
     graph[a].push(b);
     graph[b].push(a);
   }
-  console.log(graph);
-  let queue = [[0, -1]];
   let visited = new Set();
-  while (queue.length) {
-    let [node, parent] = queue.shift();
 
+  let queue = [[-1, 0]];
+  while (queue.length) {
+    let [parent, node] = queue.shift();
     visited.add(node);
     for (let nei of graph[node]) {
-      if (nei === parent) continue; // detect wrong cycle detection
+      if (nei === parent) continue;
+
       if (visited.has(nei)) return false;
-      queue.push([nei, node]);
+      queue.push([node, nei]);
     }
   }
-  return visited.size === n;
+
+  return true;
 };
 
 console.log(
