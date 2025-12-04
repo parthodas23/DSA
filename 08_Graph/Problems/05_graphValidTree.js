@@ -19,6 +19,7 @@ const isValidGraphTree = (n, edges) => {
       queue.push([node, nei]);
     }
   }
+  console.log(graph);
 
   return true;
 };
