@@ -27,7 +27,7 @@ var snakesAndLadders = function (board) {
     for (let roll = 1; roll <= 6; roll++) {
       let next = pos + roll;
 
-      if (next > n * n) continue;
+      if (cells[next] > n * n) continue;
       if (cells[next] !== -1) next = cells[next];
 
       if (!visited.has(next)) {

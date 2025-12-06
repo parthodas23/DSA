@@ -17,7 +17,7 @@ var calcEquation = function (equations, values, queries) {
 
     visited.add(curr);
     for (let [next, val] of graph[curr]) {
-      if (!visited[next]) {
+      if (!visited.has(next)) {
         const result = dfs(next, target, visited, product * val);
         if (result !== -1) return result; // if result exist then no need furthur explore
       }
