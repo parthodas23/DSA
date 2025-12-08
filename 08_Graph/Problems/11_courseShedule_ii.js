@@ -1,24 +1,25 @@
-const canFinish = (numCourses, arr) => {
+const order = (numCourses, prerequisites) => {
   let graph = {};
   let inDegree = new Array(numCourses).fill(0);
-  for (let [a, b] of arr) {
+
+  for (let [a, b] of prerequisites) {
     if (!graph[b]) graph[b] = [];
     graph[b].push(a);
+
     inDegree[a]++;
   }
 
   let queue = [];
+
   for (let i = 0; i < numCourses; i++) {
     if (inDegree[i] === 0) {
       queue.push(i);
     }
   }
-
-  let count=0;
+  let order = [];
   while (queue.length) {
     let curr = queue.shift();
-
-    count++;
+    order.push(curr);
 
     if (graph[curr]) {
       for (let nei of graph[curr]) {
@@ -30,11 +31,14 @@ const canFinish = (numCourses, arr) => {
     }
   }
 
-  return numCourses === count;
+  return order.length === numCourses ? order : [];
 };
+
 console.log(
-  canFinish(2, [
+  order(4, [
     [1, 0],
-    [0, 1],
+    [2, 0],
+    [3, 1],
+    [3, 2],
   ])
 );
