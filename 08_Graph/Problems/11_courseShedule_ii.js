@@ -1,7 +1,7 @@
 const order = (numCourses, prerequisites) => {
   let graph = {};
-  let inDegree = new Array(numCourses).fill(0);
-
+  let inDegree = Array(numCourses).fill(0);
+  console.log(inDegree);
   for (let [a, b] of prerequisites) {
     if (!graph[b]) graph[b] = [];
     graph[b].push(a);
@@ -10,15 +10,16 @@ const order = (numCourses, prerequisites) => {
   }
 
   let queue = [];
-
   for (let i = 0; i < numCourses; i++) {
     if (inDegree[i] === 0) {
       queue.push(i);
     }
   }
+
   let order = [];
   while (queue.length) {
     let curr = queue.shift();
+
     order.push(curr);
 
     if (graph[curr]) {
