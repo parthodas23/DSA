@@ -37,6 +37,8 @@ var calcEquation = function (equations, values, queries) {
       results.push(dfs(a, b, visited, 1));
     }
   }
+
+  return results;
 };
 
 console.log(

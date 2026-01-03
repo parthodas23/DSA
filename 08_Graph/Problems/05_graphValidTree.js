@@ -23,6 +23,7 @@ const isValidGraphTree = (n, edges) => {
     for (let nei of graph[node]) {
       if (nei === parent) continue;
 
+      // this means have cycle
       if (visited.has(nei)) return false;
 
       queue.push([node, nei]);

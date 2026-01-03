@@ -1,14 +1,13 @@
 const provinces = (isConnected) => {
   let provinces = 0;
   let n = isConnected.length;
-  let visited = new Array(n).fill(false);
+  let visited = Array(n).fill(false);
 
   const dfs = (city) => {
     visited[city] = true;
-
-    for (let neighbor = 0; neighbor < n; neighbor++) {
-      if (isConnected[city][neighbor] === 1 && !visited[neighbor]) {
-        dfs(neighbor);
+    for (let nei = 0; nei < n; nei++) {
+      if (isConnected[city][nei] === 1 && !visited[nei]) {
+        dfs(nei);
       }
     }
   };
