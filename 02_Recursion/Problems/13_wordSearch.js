@@ -17,7 +17,7 @@ var exist = function (board, word) {
       return false; // start search again
     }
 
-    let temp = board[r][c]; // chat collect
+    let temp = board[r][c]; // char collect
     board[r][c] = "#";
 
     let found =
