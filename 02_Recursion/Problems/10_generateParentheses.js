@@ -1,4 +1,6 @@
 const generateParentheses = (n) => {
+  // A recursive call goes deep, finishes, returns, then the function continues from where it left off.
+  
   let result = [];
   const backtack = (current, open, close) => {
     if (current.length === 2 * n) {

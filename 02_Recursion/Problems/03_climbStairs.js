@@ -32,4 +32,4 @@ function climbStairs(n) {
 //   return prev1;
 // };
 
-console.log(climbStairs(3));
+console.log(climbStairs(5));
