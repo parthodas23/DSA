@@ -1,19 +1,16 @@
-var maxProfit = function(prices) {
-    let buy=0
-    for(let i=1;i<prices.length;i++){
-        if(prices[buy]>prices[i]){
-            buy=i
-        }
+const removeDuplicates = (nums) => {
+  // edge cases
+  if (nums.length <= 2) return nums.length;
+
+  let k = 2;
+  for (let i = 2; i < nums.length; i++) {
+    if (nums[i] != nums[k - 2]) {
+      nums[k] = nums[i];
+      k++;
     }
-    let sell=buy+1
+  }
 
-
-    for(let i=buy+2;i<prices.length;i++){
-        if(prices[sell]<prices[i]){
-            sell=i
-        }
-    }
-
-    return prices[sell]-prices[buy]
-
+  return k;
 };
+
+console.log(removeDuplicates([0, 0, 1, 1, 1, 1, 2, 3, 3]));
