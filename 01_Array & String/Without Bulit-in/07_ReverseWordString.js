@@ -9,6 +9,7 @@ function ReverseWordStr(s) {
       word = "";
     }
   }
+  
   if (words.length > 0) {
     words.push(word); // The first loop only adds a word when it hits a space.
     //  But word = 'world' is still not pushed because at last no space found
