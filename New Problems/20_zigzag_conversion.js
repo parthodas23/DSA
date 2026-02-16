@@ -2,6 +2,7 @@ const zigzag = (s, numRows) => {
   let n = numRows;
   if (n === 1 || n >= s.length) return s;
   let rows = new Array(n).fill("");
+  
   let curr_row = 0;
   let going_down = false;
 
