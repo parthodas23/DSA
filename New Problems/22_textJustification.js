@@ -28,7 +28,9 @@ const justified = (words, maxWidth) => {
       console.log(totalLetters);
 
       let totalSpaces = maxWidth - totalLetters;
+
       let spaceBetween = Math.floor(totalSpaces / (numOfWords - 1));
+
       let extraSpaces = totalSpaces % (numOfWords - 1);
 
       for (let k = i; k < j - 1; k++) {
@@ -60,3 +62,22 @@ console.log(
 console.log(
   justified(["What", "must", "be", "acknowledgment", "shall", "be"], 16),
 );
+
+const palendrome = (s) => {
+  let str = s.toLowerCase();
+  let result = "";
+
+  for (let i = 0; i < str.length; i++) {
+    let charCode = str[i].charCodeAt();
+    if (
+      (charCode >= 97 && charCode <= 122) ||
+      (charCode <= 48 && charCode >= 57)
+    ) {
+      result += str[i];
+    }
+  }
+
+  console.log(result);
+};
+
+console.log(palendrome("A man, a plan, a canal: Panama"));
