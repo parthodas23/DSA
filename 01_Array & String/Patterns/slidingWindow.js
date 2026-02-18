@@ -12,23 +12,40 @@
 
 // console.log(maxSum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4));
 
-function maxSum(arr, k) {
-  // in here we gonna use sliding window
-  // one for add first k length of nums
+// function maxSum(arr, k) {
+//   // in here we gonna use sliding window
+//   // one for add first k length of nums
+//   let firstSum = 0;
+//   for (let i = 0; i < k; i++) {
+//     firstSum += arr[i];
+//   }
+//   // one for removing element and adding element
+//   let max = firstSum;
+
+//   for (let i = 0; i < arr.length - k; i++) {
+//     firstSum = firstSum - arr[i] + arr[i + k];  // here firstSum is changed
+//     max = Math.max(max, firstSum);
+//   }
+
+//   return max;
+//   // 17 - 1 + 23 = 39
+// }
+
+const maxSum = (nums, k) => {
   let firstSum = 0;
   for (let i = 0; i < k; i++) {
-    firstSum += arr[i];
-  }
-  // one for removing element and adding element
-  let max = firstSum;
-
-  for (let i = 0; i < arr.length - k; i++) {
-    firstSum = firstSum - arr[i] + arr[i + k];  // here firstSum is changed
-    max = Math.max(max, firstSum);
+    firstSum += nums[i];
   }
 
-  return max;
-  // 17 - 1 + 23 = 39
-}
+  let maxSum = 0;
+
+  for (let i = 0; i < nums.length - k; i++) {
+    firstSum = firstSum - nums[i] + nums[i + k];
+
+    maxSum = Math.max(maxSum, firstSum);
+  }
+
+  return maxSum;
+};
 
 console.log(maxSum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4));
